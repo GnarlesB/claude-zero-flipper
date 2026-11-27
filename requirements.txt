@@ -1,0 +1,5 @@
+requests
+pyserial
+browser-cookie3
+pystray
+pillow

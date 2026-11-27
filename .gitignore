@@ -1,0 +1,17 @@
+# Flipper build output
+app/dist/
+app/.vscode/
+*.fap
+*.elf
+
+# ufbt local SDK/build state (if someone builds inside the repo)
+.ufbt/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS cruft
+Thumbs.db
+.DS_Store
+desktop.ini

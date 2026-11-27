@@ -1,0 +1,12 @@
+App(
+    appid="claude_usage",
+    name="Claude Usage",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="claude_usage_app",
+    requires=["gui", "notification"],
+    stack_size=2 * 1024,
+    fap_category="USB",
+    fap_description="Shows your Claude usage, fed over USB serial by a PC backend.",
+    fap_author="you + Claude",
+    fap_version="1.7",
+)
