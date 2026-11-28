@@ -156,15 +156,18 @@ def walk(data, path=""):
 
 
 def as_pct(x):
+    """Usage values arrive already as percentages (20.0 == 20%, 1.0 == 1%).
+
+    Do NOT treat small values as 0-1 fractions: an earlier version multiplied
+    anything <= 1.0 by 100, which made a genuine 1% read as 100%.
+    """
     try:
         f = float(x)
     except (TypeError, ValueError):
         return None
-    if 0 <= f <= 1.0:
-        return round(f * 100)
-    if 0 <= f <= 100:
-        return round(f)
-    return None
+    if f < 0:
+        return None
+    return round(f) if f <= 100 else 100
 
 
 def parse_usage(data):
